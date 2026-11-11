@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Авторизация</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <button class="tab active" data-tab="login">Вход</button>
+      <button class="tab" data-tab="register">Регистрация</button>
+      <span class="slider"></span>
+    </div>
+
+    <!-- Форма входа -->
+    <form id="login-form" class="form active" enctype="multipart/form-data">
+      <h2>Добро пожаловать</h2>
+
+      <div class="input-group">
+        <input type="email" name="email" id="login-email" placeholder="Email" required />
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" id="login-password" placeholder="Пароль" required />
+        <label>Пароль</label>
+      </div>
+
+      <button type="submit" class="btn">Войти</button>
+      <p class="message" id="login-message"></p>
+    </form>
+
+    <!-- Форма регистрации -->
+    <form id="register-form" class="form" enctype="multipart/form-data">
+      <h2>Создать аккаунт</h2>
+
+      <div class="input-group">
+        <input type="text" name="name" id="register-name" placeholder="Имя" required />
+        <label>Имя</label>
+      </div>
+
+      <!-- 👇 ДОБАВЛЕНО: Фамилия -->
+      <div class="input-group">
+        <input type="text" name="lastName" id="register-lastName" placeholder="Фамилия" required />
+        <label>Фамилия</label>
+      </div>
+
+      <!-- 👇 ДОБАВЛЕНО: Возраст -->
+      <div class="input-group">
+        <input type="number" name="age" id="register-age" placeholder="Возраст" required min="1" max="120" />
+        <label>Возраст</label>
+      </div>
+
+      <div class="input-group">
+        <input type="email" name="email" id="register-email" placeholder="Email" required />
+        <label>Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" name="password" id="register-password" placeholder="Пароль" required minlength="6" />
+        <label>Пароль</label>
+      </div>
+
+      <div class="input-group file-group">
+        <label for="register-avatar" class="file-label">
+          <span id="file-name">Выберите аватар</span>
+          <input type="file" name="avatar" id="register-avatar" accept="image/*" />
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Зарегистрироваться</button>
+      <p class="message" id="register-message"></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
